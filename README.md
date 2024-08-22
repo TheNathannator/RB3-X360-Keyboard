@@ -1,8 +1,8 @@
 # RB3 X360 Keyboard
 
-## About
-
 This program allows you to use an Xbox 360 RB3 keyboard for things while connected to an Xbox 360 wireless receiver, via either an emulated Xbox 360 controller, keypresses, or MIDI inputs.
+
+I have documented everything I know about the keyboard inputs in [my PlasticBand repository](https://github.com/TheNathannator/PlasticBand/blob/main/Docs/Instruments/Pro%20Keyboard/Xbox%20360.md). Refer there for more detailed information on how to read things in your own program.
 
 The touch strip is not supported, as it is not reported through the standard input APIs.
 
@@ -12,10 +12,6 @@ The touch strip is not supported, as it is not reported through the standard inp
 2. Extract the contents of the .zip into a new folder.
 3. Install the [ViGEmBus driver](https://github.com/ViGEm/ViGEmBus/releases/latest) if you wish to use Xbox 360 controller emulation.
 4. Install MIDI loopback software such as [loopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html) if you wish to use MIDI output.
-
-## Research
-
-I have documented everything I know about the keyboard inputs in [a Markdown file included in this repo](doc/Xbox%20360%20Keyboard%20Inputs.md). For the most part everything should be correct, but there are a couple things missing or potentially incorrect.
 
 ## Similar Projects
 
