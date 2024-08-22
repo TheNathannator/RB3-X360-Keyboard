@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RB3_X360_Keyboard", "RB3_X360_Keyboard.csproj", "{6D3D8E64-4CED-4F1D-80FF-9E666504EC6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RB3_X360_Keyboard", "source/RB3_X360_Keyboard.csproj", "{6D3D8E64-4CED-4F1D-80FF-9E666504EC6D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
