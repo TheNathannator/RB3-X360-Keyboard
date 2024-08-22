@@ -3,7 +3,8 @@ using System.Drawing;
 using System.Diagnostics;
 using System.Timers;
 using System.Windows.Forms;
-using image = RB3_X360_Keyboard.Properties.Resources;
+
+using RB3_X360_Keyboard.Properties;
 
 namespace Program
 {
@@ -389,29 +390,29 @@ namespace Program
 		{
 			// Update the state of the button/key images based on the current state of each button.
 			// Buttons
-			if(stateCurrent.btnA) image_AButton.Image = (Image)image.aPressed_cropped;
-			else image_AButton.Image = (Image)image.a_cropped;
+			if(stateCurrent.btnA) image_AButton.Image = Resources.aPressed_cropped;
+			else image_AButton.Image = Resources.a_cropped;
 
-			if(stateCurrent.btnB) image_BButton.Image = (Image)image.bPressed_cropped;
-			else image_BButton.Image = (Image)image.b_cropped;
+			if(stateCurrent.btnB) image_BButton.Image = Resources.bPressed_cropped;
+			else image_BButton.Image = Resources.b_cropped;
 
-			if(stateCurrent.btnX) image_XButton.Image = (Image)image.xPressed_cropped;
-			else image_XButton.Image = (Image)image.x_cropped;
+			if(stateCurrent.btnX) image_XButton.Image = Resources.xPressed_cropped;
+			else image_XButton.Image = Resources.x_cropped;
 
-			if(stateCurrent.btnY) image_YButton.Image = (Image)image.yPressed_cropped;
-			else image_YButton.Image = (Image)image.y_cropped;
+			if(stateCurrent.btnY) image_YButton.Image = Resources.yPressed_cropped;
+			else image_YButton.Image = Resources.y_cropped;
 
-			if(stateCurrent.btnSt) image_StartButton.Image = (Image)image.startPressed_cropped;
-			else image_StartButton.Image = (Image)image.start_cropped;
+			if(stateCurrent.btnSt) image_StartButton.Image = Resources.startPressed_cropped;
+			else image_StartButton.Image = Resources.start_cropped;
 
-			if(stateCurrent.btnBk) image_BackButton.Image = (Image)image.backPressed_cropped;
-			else image_BackButton.Image = (Image)image.back_cropped;
+			if(stateCurrent.btnBk) image_BackButton.Image = Resources.backPressed_cropped;
+			else image_BackButton.Image = Resources.back_cropped;
 
-			if(stateCurrent.overdrive) image_OverdriveButton.Image = (Image)image.overdrivePressed_cropped;
-			else image_OverdriveButton.Image = (Image)image.overdrive_cropped;
+			if(stateCurrent.overdrive) image_OverdriveButton.Image = Resources.overdrivePressed_cropped;
+			else image_OverdriveButton.Image = Resources.overdrive_cropped;
 
-			if(stateCurrent.pedalDigital) image_Pedal.Image = (Image)image.pedalPressed_small;
-			else image_Pedal.Image = (Image)image.pedal_small;
+			if(stateCurrent.pedalDigital) image_Pedal.Image = Resources.pedalPressed_small;
+			else image_Pedal.Image = Resources.pedal_small;
 
 			// D-pad
 			switch(stateCurrent.dpadU, stateCurrent.dpadD, stateCurrent.dpadL, stateCurrent.dpadR)
@@ -419,71 +420,71 @@ namespace Program
 				// Not pressed
 				default:
 				case (false, false, false, false):
-					image_Dpad.Image = (Image)image.dpad_cropped;
+					image_Dpad.Image = Resources.dpad_cropped;
 					break;
 
 				// Up
 				case (true, false, false, false):
-					image_Dpad.Image = (Image)image.dpadUp_cropped;
+					image_Dpad.Image = Resources.dpadUp_cropped;
 					break;
 				// Down
 				case (false, true, false, false):
-					image_Dpad.Image = (Image)image.dpadDown_cropped;
+					image_Dpad.Image = Resources.dpadDown_cropped;
 					break;
 				// Left
 				case (false, false, true, false):
-					image_Dpad.Image = (Image)image.dpadLeft_cropped;
+					image_Dpad.Image = Resources.dpadLeft_cropped;
 					break;
 				// Right
 				case (false, false, false, true):
-					image_Dpad.Image = (Image)image.dpadRight_cropped;
+					image_Dpad.Image = Resources.dpadRight_cropped;
 					break;
 				
 				// Up + Down (impossible under normal circumstances)
 				case (true, true, false, false):
-					image_Dpad.Image = (Image)image.dpadUpDown_cropped;
+					image_Dpad.Image = Resources.dpadUpDown_cropped;
 					break;
 				// Up + Left
 				case (true, false, true, false):
-					image_Dpad.Image = (Image)image.dpadUpLeft_cropped;
+					image_Dpad.Image = Resources.dpadUpLeft_cropped;
 					break;
 				// Up + Right
 				case (true, false, false, true):
-					image_Dpad.Image = (Image)image.dpadUpRight_cropped;
+					image_Dpad.Image = Resources.dpadUpRight_cropped;
 					break;
 				// Down + Left
 				case (false, true, true, false):
-					image_Dpad.Image = (Image)image.dpadDownLeft_cropped;
+					image_Dpad.Image = Resources.dpadDownLeft_cropped;
 					break;
 				// Down + Right
 				case (false, true, false, true):
-					image_Dpad.Image = (Image)image.dpadDownRight_cropped;
+					image_Dpad.Image = Resources.dpadDownRight_cropped;
 					break;
 				// Left + Right (impossible under normal circumstances)
 				case (false, false, true, true):
-					image_Dpad.Image = (Image)image.dpadDownRight_cropped;
+					image_Dpad.Image = Resources.dpadDownRight_cropped;
 					break;
 
 				// Up + Down + Left (impossible under normal circumstances)
 				case (true, true, true, false):
-					image_Dpad.Image = (Image)image.dpadDownLeftUp_cropped;
+					image_Dpad.Image = Resources.dpadDownLeftUp_cropped;
 					break;
 				// Up + Down + Right (impossible under normal circumstances)
 				case (true, true, false, true):
-					image_Dpad.Image = (Image)image.dpadUpRightDown_cropped;
+					image_Dpad.Image = Resources.dpadUpRightDown_cropped;
 					break;
 				// Up + Left + Right (impossible under normal circumstances)
 				case (true, false, true, true):
-					image_Dpad.Image = (Image)image.dpadUpLeftRight_cropped;
+					image_Dpad.Image = Resources.dpadUpLeftRight_cropped;
 					break;
 				// Down + Left + Right (impossible under normal circumstances)
 				case (false, true, true, true):
-					image_Dpad.Image = (Image)image.dpadDownLeftRight_cropped;
+					image_Dpad.Image = Resources.dpadDownLeftRight_cropped;
 					break;
 
 				// Up + Down + Left + Right (impossible under normal circumstances)
 				case (true, true, true, true):
-					image_Dpad.Image = (Image)image.dpadUpDownLeftRight_cropped;
+					image_Dpad.Image = Resources.dpadUpDownLeftRight_cropped;
 					break;
 			}
 
@@ -493,102 +494,102 @@ namespace Program
 			{
 				default:
 				case -1:
-					if(stateCurrent.btnGuide) image_GuideButton.Image = (Image)image.guidePressedLightsOff_cropped;
-					else image_GuideButton.Image = (Image)image.guideLightsOff_cropped;
+					if(stateCurrent.btnGuide) image_GuideButton.Image = Resources.guidePressedLightsOff_cropped;
+					else image_GuideButton.Image = Resources.guideLightsOff_cropped;
 					break;
 				case 0:
-					if(stateCurrent.btnGuide) image_GuideButton.Image = (Image)image.guidePressedPlayer1_cropped;
-					else image_GuideButton.Image = (Image)image.guidePlayer1_cropped;
+					if(stateCurrent.btnGuide) image_GuideButton.Image = Resources.guidePressedPlayer1_cropped;
+					else image_GuideButton.Image = Resources.guidePlayer1_cropped;
 					break;
 				case 1:
-					if(stateCurrent.btnGuide) image_GuideButton.Image = (Image)image.guidePressedPlayer2_cropped;
-					else image_GuideButton.Image = (Image)image.guidePlayer2_cropped;
+					if(stateCurrent.btnGuide) image_GuideButton.Image = Resources.guidePressedPlayer2_cropped;
+					else image_GuideButton.Image = Resources.guidePlayer2_cropped;
 					break;
 				case 2:
-					if(stateCurrent.btnGuide) image_GuideButton.Image = (Image)image.guidePressedPlayer3_cropped;
-					else image_GuideButton.Image = (Image)image.guidePlayer3_cropped;
+					if(stateCurrent.btnGuide) image_GuideButton.Image = Resources.guidePressedPlayer3_cropped;
+					else image_GuideButton.Image = Resources.guidePlayer3_cropped;
 					break;
 				case 3:
-					if(stateCurrent.btnGuide) image_GuideButton.Image = (Image)image.guidePressedPlayer4_cropped;
-					else image_GuideButton.Image = (Image)image.guidePlayer4_cropped;
+					if(stateCurrent.btnGuide) image_GuideButton.Image = Resources.guidePressedPlayer4_cropped;
+					else image_GuideButton.Image = Resources.guidePlayer4_cropped;
 					break;
 			}
 
 			// Keys
-			if(stateCurrent.key[0]) image_KeyC1.Image = (Image)image.keyLeftPressed_cropped.Clone();
-			else image_KeyC1.Image = (Image)image.keyLeft_cropped.Clone();
+			if(stateCurrent.key[0]) image_KeyC1.Image = (Image)Resources.keyLeftPressed_cropped.Clone();
+			else image_KeyC1.Image = (Image)Resources.keyLeft_cropped.Clone();
 
-			if(stateCurrent.key[1]) image_KeyDb1.Image = (Image)image.keyBlackPressed_cropped.Clone();
-			else image_KeyDb1.Image = (Image)image.keyBlack_cropped.Clone();
+			if(stateCurrent.key[1]) image_KeyDb1.Image = (Image)Resources.keyBlackPressed_cropped.Clone();
+			else image_KeyDb1.Image = (Image)Resources.keyBlack_cropped.Clone();
 			
-			if(stateCurrent.key[2]) image_KeyD1.Image = (Image)image.keyCenterPressed_cropped.Clone();
-			else image_KeyD1.Image = (Image)image.keyCenter_cropped.Clone();
+			if(stateCurrent.key[2]) image_KeyD1.Image = (Image)Resources.keyCenterPressed_cropped.Clone();
+			else image_KeyD1.Image = (Image)Resources.keyCenter_cropped.Clone();
 
-			if(stateCurrent.key[3]) image_KeyEb1.Image = (Image)image.keyBlackPressed_cropped.Clone();
-			else image_KeyEb1.Image = (Image)image.keyBlack_cropped.Clone();
+			if(stateCurrent.key[3]) image_KeyEb1.Image = (Image)Resources.keyBlackPressed_cropped.Clone();
+			else image_KeyEb1.Image = (Image)Resources.keyBlack_cropped.Clone();
 
-			if(stateCurrent.key[4]) image_KeyE1.Image = (Image)image.keyRightPressed_cropped.Clone();
-			else image_KeyE1.Image = (Image)image.keyRight_cropped.Clone();
+			if(stateCurrent.key[4]) image_KeyE1.Image = (Image)Resources.keyRightPressed_cropped.Clone();
+			else image_KeyE1.Image = (Image)Resources.keyRight_cropped.Clone();
 
-			if(stateCurrent.key[5]) image_KeyF1.Image = (Image)image.keyLeftPressed_cropped.Clone();
-			else image_KeyF1.Image = (Image)image.keyLeft_cropped.Clone();
+			if(stateCurrent.key[5]) image_KeyF1.Image = (Image)Resources.keyLeftPressed_cropped.Clone();
+			else image_KeyF1.Image = (Image)Resources.keyLeft_cropped.Clone();
 
-			if(stateCurrent.key[6]) image_KeyGb1.Image = (Image)image.keyBlackPressed_cropped.Clone();
-			else image_KeyGb1.Image = (Image)image.keyBlack_cropped.Clone();
+			if(stateCurrent.key[6]) image_KeyGb1.Image = (Image)Resources.keyBlackPressed_cropped.Clone();
+			else image_KeyGb1.Image = (Image)Resources.keyBlack_cropped.Clone();
 
-			if(stateCurrent.key[7]) image_KeyG1.Image = (Image)image.keyMiddleLeftPressed_cropped.Clone();
-			else image_KeyG1.Image = (Image)image.keyMiddleLeft_cropped.Clone();
+			if(stateCurrent.key[7]) image_KeyG1.Image = (Image)Resources.keyMiddleLeftPressed_cropped.Clone();
+			else image_KeyG1.Image = (Image)Resources.keyMiddleLeft_cropped.Clone();
 
-			if(stateCurrent.key[8]) image_KeyAb1.Image = (Image)image.keyBlackPressed_cropped.Clone();
-			else image_KeyAb1.Image = (Image)image.keyBlack_cropped.Clone();
+			if(stateCurrent.key[8]) image_KeyAb1.Image = (Image)Resources.keyBlackPressed_cropped.Clone();
+			else image_KeyAb1.Image = (Image)Resources.keyBlack_cropped.Clone();
 
-			if(stateCurrent.key[9]) image_KeyA1.Image = (Image)image.keyMiddleRightPressed_cropped.Clone();
-			else image_KeyA1.Image = (Image)image.keyMiddleRight_cropped.Clone();
+			if(stateCurrent.key[9]) image_KeyA1.Image = (Image)Resources.keyMiddleRightPressed_cropped.Clone();
+			else image_KeyA1.Image = (Image)Resources.keyMiddleRight_cropped.Clone();
 
-			if(stateCurrent.key[10]) image_KeyBb1.Image = (Image)image.keyBlackPressed_cropped.Clone();
-			else image_KeyBb1.Image = (Image)image.keyBlack_cropped.Clone();
+			if(stateCurrent.key[10]) image_KeyBb1.Image = (Image)Resources.keyBlackPressed_cropped.Clone();
+			else image_KeyBb1.Image = (Image)Resources.keyBlack_cropped.Clone();
 
-			if(stateCurrent.key[11]) image_KeyB1.Image = (Image)image.keyRightPressed_cropped.Clone();
-			else image_KeyB1.Image = (Image)image.keyRight_cropped.Clone();
+			if(stateCurrent.key[11]) image_KeyB1.Image = (Image)Resources.keyRightPressed_cropped.Clone();
+			else image_KeyB1.Image = (Image)Resources.keyRight_cropped.Clone();
 
-			if(stateCurrent.key[12]) image_KeyC2.Image = (Image)image.keyLeftPressed_cropped.Clone();
-			else image_KeyC2.Image = (Image)image.keyLeft_cropped.Clone();
+			if(stateCurrent.key[12]) image_KeyC2.Image = (Image)Resources.keyLeftPressed_cropped.Clone();
+			else image_KeyC2.Image = (Image)Resources.keyLeft_cropped.Clone();
 
-			if(stateCurrent.key[13]) image_KeyDb2.Image = (Image)image.keyBlackPressed_cropped.Clone();
-			else image_KeyDb2.Image = (Image)image.keyBlack_cropped.Clone();
+			if(stateCurrent.key[13]) image_KeyDb2.Image = (Image)Resources.keyBlackPressed_cropped.Clone();
+			else image_KeyDb2.Image = (Image)Resources.keyBlack_cropped.Clone();
 			
-			if(stateCurrent.key[14]) image_KeyD2.Image = (Image)image.keyCenterPressed_cropped.Clone();
-			else image_KeyD2.Image = (Image)image.keyCenter_cropped.Clone();
+			if(stateCurrent.key[14]) image_KeyD2.Image = (Image)Resources.keyCenterPressed_cropped.Clone();
+			else image_KeyD2.Image = (Image)Resources.keyCenter_cropped.Clone();
 
-			if(stateCurrent.key[15]) image_KeyEb2.Image = (Image)image.keyBlackPressed_cropped.Clone();
-			else image_KeyEb2.Image = (Image)image.keyBlack_cropped.Clone();
+			if(stateCurrent.key[15]) image_KeyEb2.Image = (Image)Resources.keyBlackPressed_cropped.Clone();
+			else image_KeyEb2.Image = (Image)Resources.keyBlack_cropped.Clone();
 
-			if(stateCurrent.key[16]) image_KeyE2.Image = (Image)image.keyRightPressed_cropped.Clone();
-			else image_KeyE2.Image = (Image)image.keyRight_cropped.Clone();
+			if(stateCurrent.key[16]) image_KeyE2.Image = (Image)Resources.keyRightPressed_cropped.Clone();
+			else image_KeyE2.Image = (Image)Resources.keyRight_cropped.Clone();
 
-			if(stateCurrent.key[17]) image_KeyF2.Image = (Image)image.keyLeftPressed_cropped.Clone();
-			else image_KeyF2.Image = (Image)image.keyLeft_cropped.Clone();
+			if(stateCurrent.key[17]) image_KeyF2.Image = (Image)Resources.keyLeftPressed_cropped.Clone();
+			else image_KeyF2.Image = (Image)Resources.keyLeft_cropped.Clone();
 
-			if(stateCurrent.key[18]) image_KeyGb2.Image = (Image)image.keyBlackPressed_cropped.Clone();
-			else image_KeyGb2.Image = (Image)image.keyBlack_cropped.Clone();
+			if(stateCurrent.key[18]) image_KeyGb2.Image = (Image)Resources.keyBlackPressed_cropped.Clone();
+			else image_KeyGb2.Image = (Image)Resources.keyBlack_cropped.Clone();
 
-			if(stateCurrent.key[19]) image_KeyG2.Image = (Image)image.keyMiddleLeftPressed_cropped.Clone();
-			else image_KeyG2.Image = (Image)image.keyMiddleLeft_cropped.Clone();
+			if(stateCurrent.key[19]) image_KeyG2.Image = (Image)Resources.keyMiddleLeftPressed_cropped.Clone();
+			else image_KeyG2.Image = (Image)Resources.keyMiddleLeft_cropped.Clone();
 
-			if(stateCurrent.key[20]) image_KeyAb2.Image = (Image)image.keyBlackPressed_cropped.Clone();
-			else image_KeyAb2.Image = (Image)image.keyBlack_cropped.Clone();
+			if(stateCurrent.key[20]) image_KeyAb2.Image = (Image)Resources.keyBlackPressed_cropped.Clone();
+			else image_KeyAb2.Image = (Image)Resources.keyBlack_cropped.Clone();
 
-			if(stateCurrent.key[21]) image_KeyA2.Image = (Image)image.keyMiddleRightPressed_cropped.Clone();
-			else image_KeyA2.Image = (Image)image.keyMiddleRight_cropped.Clone();
+			if(stateCurrent.key[21]) image_KeyA2.Image = (Image)Resources.keyMiddleRightPressed_cropped.Clone();
+			else image_KeyA2.Image = (Image)Resources.keyMiddleRight_cropped.Clone();
 
-			if(stateCurrent.key[22]) image_KeyBb2.Image = (Image)image.keyBlackPressed_cropped.Clone();
-			else image_KeyBb2.Image = (Image)image.keyBlack_cropped.Clone();
+			if(stateCurrent.key[22]) image_KeyBb2.Image = (Image)Resources.keyBlackPressed_cropped.Clone();
+			else image_KeyBb2.Image = (Image)Resources.keyBlack_cropped.Clone();
 
-			if(stateCurrent.key[23]) image_KeyB2.Image = (Image)image.keyRightPressed_cropped.Clone();
-			else image_KeyB2.Image = (Image)image.keyRight_cropped.Clone();
+			if(stateCurrent.key[23]) image_KeyB2.Image = (Image)Resources.keyRightPressed_cropped.Clone();
+			else image_KeyB2.Image = (Image)Resources.keyRight_cropped.Clone();
 
-			if(stateCurrent.key[24]) image_KeyC3.Image = (Image)image.keyEndPressed_cropped;
-			else image_KeyC3.Image = (Image)image.keyEnd_cropped;
+			if(stateCurrent.key[24]) image_KeyC3.Image = (Image)Resources.keyEndPressed_cropped;
+			else image_KeyC3.Image = (Image)Resources.keyEnd_cropped;
 		}
 	}
 }

@@ -1,8 +1,9 @@
 using System.Diagnostics;
 using Melanchall.DryWetMidi.Devices;
 using Melanchall.DryWetMidi.Core;
-using sevenbit = Melanchall.DryWetMidi.Common.SevenBitNumber;
-using fourbit = Melanchall.DryWetMidi.Common.FourBitNumber;
+
+using SevenBit = Melanchall.DryWetMidi.Common.SevenBitNumber;
+using FourBit = Melanchall.DryWetMidi.Common.FourBitNumber;
 
 namespace InOut
 {
@@ -70,7 +71,7 @@ namespace InOut
 
 			if(program != previousProgram)
 			{
-				outputMidi.SendEvent(new ProgramChangeEvent((sevenbit)program));
+				outputMidi.SendEvent(new ProgramChangeEvent((SevenBit)program));
 				previousProgram = program;
 			}
 
@@ -81,16 +82,16 @@ namespace InOut
 				{
 					if(stateCurrent.key[i])
 					{
-						NoteOnEvent note = new NoteOnEvent((sevenbit)midiNum[i], (sevenbit)stateCurrent.velocity[i]);
-						if(drumMode && i < 12) note.Channel = (fourbit)9;
-						else note.Channel  = (fourbit)0;
+						NoteOnEvent note = new NoteOnEvent((SevenBit)midiNum[i], (SevenBit)stateCurrent.velocity[i]);
+						if(drumMode && i < 12) note.Channel = (FourBit)9;
+						else note.Channel  = (FourBit)0;
 						outputMidi.SendEvent(note);
 					}
 					else
 					{
-						NoteOffEvent note = new NoteOffEvent((sevenbit)midiNum[i], (sevenbit)0);
-						if(drumMode && i < 12) note.Channel = (fourbit)9;
-						else note.Channel  = (fourbit)0;
+						NoteOffEvent note = new NoteOffEvent((SevenBit)midiNum[i], (SevenBit)0);
+						if(drumMode && i < 12) note.Channel = (FourBit)9;
+						else note.Channel  = (FourBit)0;
 						outputMidi.SendEvent(note);
 					}
 				}
@@ -99,11 +100,11 @@ namespace InOut
 			// Sends control channel events.
 			if(stateCurrent.pedalDigital != statePrevious.pedalDigital)
 			{
-				ControlChangeEvent digital = new ControlChangeEvent((sevenbit)64, (sevenbit)0);
+				ControlChangeEvent digital = new ControlChangeEvent((SevenBit)64, (SevenBit)0);
 
-				digital.Channel = (fourbit)0;
-				if(stateCurrent.pedalDigital) digital.ControlValue = (sevenbit)127;
-				else digital.ControlValue = (sevenbit)0;
+				digital.Channel = (FourBit)0;
+				if(stateCurrent.pedalDigital) digital.ControlValue = (SevenBit)127;
+				else digital.ControlValue = (SevenBit)0;
 				
 				outputMidi.SendEvent(digital);
 			}
@@ -112,20 +113,20 @@ namespace InOut
 			{
 				ControlChangeEvent analog  = new ControlChangeEvent();
 
-				analog.Channel  = (fourbit)0;
+				analog.Channel  = (FourBit)0;
 				switch(pedalMode)
 				{
 					case (int)PedalModes.Expression:
-						analog.ControlNumber = (sevenbit)11;
+						analog.ControlNumber = (SevenBit)11;
 						break;
 					case (int)PedalModes.ChannelVolume:
-						analog.ControlNumber = (sevenbit)7;
+						analog.ControlNumber = (SevenBit)7;
 						break;
 					case (int)PedalModes.FootController:
-						analog.ControlNumber = (sevenbit)4;
+						analog.ControlNumber = (SevenBit)4;
 						break;
 				}
-				analog.ControlValue = (sevenbit)stateCurrent.pedalAnalog;
+				analog.ControlValue = (SevenBit)stateCurrent.pedalAnalog;
 				
 				outputMidi.SendEvent(analog);
 			}
